@@ -1,5 +1,12 @@
 from pymongo import MongoClient
+from pdf2text import pdf2text
+import pdfminer
 
+
+
+print("pdfminer.six ver.{}".format(pdfminer.__version__))
+results = pdf2text()
+print(results)
 
 #  MongoDBに接続
 client = MongoClient()
@@ -12,4 +19,5 @@ db = client.test
 collection = db.posts
  
 # 辞書データを挿入
-collection.insert_one({'名前':'太郎', '住所':'東京'})
+for result in results:
+    collection.insert_one(result)
