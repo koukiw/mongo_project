@@ -13,8 +13,8 @@ from pdfminer.high_level import extract_text
 CONFIG_KEY_PDF_FOLDER = "../pdf"
 
 
-# PDFからテキストを抜き出してjson形式で情報を整理（keyはタイトル、text）
-def pdf2text():
+# PDFからテキストを抜き出してjson形式で情報を整理（keyはtitle、text,file_format）
+def func_pdf2text():
     process_name = ""
     try:
         #
@@ -36,24 +36,27 @@ def pdf2text():
             text = extract_text(file)
             # テキストの加工
             text = text.replace("\n","").replace("\r","").replace("\t","").strip()
+
             filename  = os.path.basename(file)
-            # file_result = {"title":filename,"text": text}
-            result = {"title":filename,"text": "test"}
+
+            # result = {"title":filename,"text": text,"file_format":"pdf"}
+            result = {"title":filename,"text": "test","file_format":"pdf"}
             results.append(result)
+
         # result_json = json.dumps(result, indent=2, ensure_ascii=False)
         # print("result_json",result_json)
         # print(type(result_json))
         return results
             
     except Exception as e:
-        print("error発生")
+        print("pdf2textにてerror発生")
         return -1
 
 
 # メイン処理
 if __name__ == "__main__":
-    print("pdfminer.six ver.{}".format(pdfminer.__version__))
-    results = pdf2text()
+    # print("pdfminer.six ver.{}".format(pdfminer.__version__))
+    results = func_pdf2text()
     print(results)
 
 
