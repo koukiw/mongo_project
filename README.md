@@ -10,12 +10,11 @@ RDBMSと呼ばれる従来のテーブルとレコードを使ったDBとは異�
 
 ローカルのpython上からpymongoを使ってdocker上のmongoDBに接続.  
 
-リポジトリをクローンしたのち、
+リポジトリをクローンしたのち、./mongo_project配下にて
 ```python
 pip install -r requirements.txt
 ```
-にて環境を構築してください
-./mongo_project配下にて
+にて環境を構築してください。それができたら、
 ```python
 docker-compose up -d
 ```
