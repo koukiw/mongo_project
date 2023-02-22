@@ -23,9 +23,8 @@ docker-compose up -d
 ```python
 python main.py
 ```
-```python
-localhost:8081
+
 [localhost:8081](localhost:8081 "mongo_express")
-```
+
 にアクセス。
 mongo_express上でdemo_db内にデータが格納されていることが確認できればOK
