@@ -17,8 +17,9 @@ pdfからのテキスト抽出し整形したのち、pdfディレクトリのpd
 
 現在docker上で動くようにdockerの構築を学習中。
 
+.pdf/
+.csv/
+.word/配下にそれぞれ保存したいファイルを格納した状態で以下コマンド
 ```python
-function hello(){
-　return "hello world!";
-}
+python test.py
 ```
