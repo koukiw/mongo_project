@@ -8,9 +8,7 @@
 ・NoSQL：非リレーショナルDB.  
 RDBMSと呼ばれる従来のテーブルとレコードを使ったDBとは異なった方法でデータを扱える.  
 
-pythonからpymongoを使ってdocker上のmongoDBに接続.  
-pdfからのテキスト抽出し整形したのち、pdfディレクトリのpdfファイルのファイル名とテキストをmongoDBへ登録出来るよう作成。
-
+ローカルのpython上からpymongoを使ってdocker上のmongoDBに接続.  
 
 リポジトリをクローンしたのち、
 ```python
