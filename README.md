@@ -11,11 +11,16 @@ RDBMSと呼ばれる従来のテーブルとレコードを使ったDBとは異�
 pythonからpymongoを使ってdocker上のmongoDBに接続.  
 pdfからのテキスト抽出し整形したのち、pdfディレクトリのpdfファイルのファイル名とテキストをmongoDBへ登録出来るよう作成。
 
+
+リポジトリをクローンしたのち、
+```python
+pip install -r requirements.txt
+```
+にて環境を構築してください
 ./mongo_project配下にて
 ```python
 docker-compose up -d
 ```
-
 コンテナが起動している状態で　   
 .pdf/
 .csv/
