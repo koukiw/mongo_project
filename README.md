@@ -21,5 +21,5 @@ pdfからのテキスト抽出し整形したのち、pdfディレクトリのpd
 .csv/
 .word/配下にそれぞれ保存したいファイルを格納した状態で以下コマンド
 ```python
-python test.py
+python main.py
 ```
