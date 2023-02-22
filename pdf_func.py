@@ -39,8 +39,8 @@ def func_pdf2text():
 
             filename  = os.path.basename(file)
 
-            # result = {"title":filename,"text": text,"file_format":"pdf"}
-            result = {"title":filename,"text": "test","file_format":"pdf"}
+            result = {"title":filename,"text": text,"file_format":"pdf"}
+            # result = {"title":filename,"text": "test","file_format":"pdf"}
             results.append(result)
 
         # result_json = json.dumps(result, indent=2, ensure_ascii=False)

@@ -52,5 +52,5 @@ def csv2text():
 # メイン処理
 if __name__ == "__main__":
     results = csv2text()
-    print(len(results))
-    print(results)
+    # print(len(results))
+    # print(results)

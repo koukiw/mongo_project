@@ -4,22 +4,23 @@ from word_func import word2text
 from csv_func import csv2text
 import pdfminer
 
+HOST = 'localhost'
+PORT = 27017
+USERNAME = 'root'
+PASSWORD = 'password'
 
-results = func_pdf2text()
-results.extend(word2text())
-results.extend(csv2text())
-print(results)
+DB_NAME = 'demo_db'
+COLLECTION_NAME = 'demo_collection'
 
-#  MongoDBに接続
-client = MongoClient()
-# client = MongoClient('localhost', 27017)
- 
-# testデータベースを取得
-db = client.test
- 
-# データベースのpostsコレクションを取得
-collection = db.posts
- 
-# 辞書データを挿入
-for result in results:
-    collection.insert_one(result)
+if __name__ == '__main__':
+    client = MongoClient(host=HOST, port=PORT, username=USERNAME, password=PASSWORD)
+    db = client[DB_NAME]
+    collection = db[COLLECTION_NAME]
+
+    results = func_pdf2text()
+    results.extend(word2text())
+    results.extend(csv2text())
+    # print(results)
+
+    collection.insert_many(results)
+    print("完了")

@@ -1,0 +1,63 @@
+quit
+use admin
+show dbs;
+db.systems.users.find();
+db.system.users.find();
+db.users.find();
+...   }
+...              { role: "read", db: "reporting" } ]
+...     roles: [ { role: "readWrite", db: "test" },
+...     pwd:  passwordPrompt(),   // or cleartext password
+db.createUser( ...   { ...     user: "myTester",
+      'db': db,
+      'role': 'userAdminAnyDatabase',
+db.createUser({ user: "test_user", pwd: "password", roles: [{] })
+db.createUser({ user: "test_user", pwd: "password", roles: [] })
+use test
+db.system.users.find()
+db.users.find();
+show collections
+db.createUser( { user: "myTester", pwd: passwordPrompt(), /* or cleartext password*/ roles: [{ role: "readWrite", db: "test" }, { role: "read", db: "reporting" }] });
+show collections
+db.system.users.find()
+show collections;
+switched to db admin
+use admin
+show dbs;
+db.users.find();
+db.users.insertOne({ name: "testA", age: 30})
+db.users.insert({ name: "testA", age: 30})
+db.createCollection('users')
+db.users.find();
+show collections
+use testdb
+db.system.users.find()
+show collections
+use admin
+show dbs;
+exit
+show dbs;
+db.system.users.find()
+show collections
+use admin
+show dbs;
+db.collections.find();
+db.collections.find():
+show collections;
+use testdb;
+show dbs;
+db.system.users.find()
+show collections;
+use admin
+db.users.find()
+db.users.insert({ name: "testA", age: 29})
+show dbs;
+db.createCollection('users')
+show dbs;
+show dbsd;
+use testdb
+db.system.users.find()
+show collections
+use admin
+db.system.users.find()
+show dbs;dbs;ow dbs;dbs;
