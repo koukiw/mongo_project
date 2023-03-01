@@ -1,4 +1,44 @@
 quit
+qit
+db.demo_collection.find({text:{$regex:"りんご"}},{title:1,file_format:1,text:1})
+db.demo_collection.find({text:{$regex:"りんご"}},{})
+db.demo_collection.find({text:{$regex:"りんご"}},{title:1,file_format:1})
+db.demo_collection.find({title:{$regex:"HIRANO"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"HIRNO"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"hirano"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"hirano",options:"$1"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"hirano"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"hirano",$options:"$i"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"HIRANO"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"hirano"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"cluster"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"クラスタリング"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"J"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"w3cschool.cc"}},{title:1,file_format:1}).sort()
+db.demo_collection.find({title:{$regex:"w3cschool.cc"},{title:1,file_format:1}).sort()
+db.demo_collection.find({file_format:"pdf"},{title:1,file_format:1}).sort()
+db.demo_collection.find({file_format:"pdf"},{title:1,file_format:1})
+db.demo_collection.find({file_format:"pdf"},{title:1})
+db.demo_collection.find({file_format:"pdf"},{title:0})
+db.demo_collection.find({file_format:"pdf"},{})
+db.demo_collection.find()
+db.demo_collections.find()
+show collections
+use demo_db;
+show dbs;
+db.demo_collection.find()
+db.demo_collection.find({file_format:"pdf"},{file_format:1})
+db.demo_collection.find({file_format:"pdf"},{file_format:0})
+db.demo_collection.find({file_format:"pdf"},{})
+db.demo_collection.find({file_format:"pdf"},{title:0})
+db.demo_collection.find({file_format:"pdf"},{title:1})
+use demo_collection
+show collections;
+use demo_db;
+show dbs;
+quit
+show dbs;
+quit
 use admin
 show dbs;
 db.systems.users.find();
@@ -60,4 +100,4 @@ db.system.users.find()
 show collections
 use admin
 db.system.users.find()
-show dbs;dbs;ow dbs;dbs;
+show dbs;dbs;ow dbs;dbs;dbs;ow dbs;dbs;

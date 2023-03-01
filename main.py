@@ -19,7 +19,9 @@ if __name__ == '__main__':
 
     results = func_pdf2text()
     results.extend(word2text())
-    results.extend(csv2text())
+    csv,excel = csv2text()
+    results.extend(csv)
+    results.extend(excel)
     # print(results)
 
     collection.insert_many(results)

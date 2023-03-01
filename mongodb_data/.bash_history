@@ -64,3 +64,7 @@ exti
 exti
 exti
 exit
+pwd
+ls
+mongosh
+mongosh -u root -p

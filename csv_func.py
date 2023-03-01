@@ -25,6 +25,7 @@ def csv2text():
         cnt = 0
         print(files)
         results = []
+        results_excel = []
         for file in files:
             cnt += 1
             print("テキスト抽出処理中…（{}/{}）".format(cnt, len(files)))
@@ -40,9 +41,13 @@ def csv2text():
             # result = {"title":filename,"text": text,"file_format":"pdf"}
             result = {"title":filename,"text": data,"file_format":"csv"}
             results.append(result)
+            filename_excel = filename[:-3] + "xlsx"
+            result_excel = {"title":filename_excel,"text": data,"file_format":"excel"}
+            results_excel.append(result_excel)
+            
 
 
-        return results
+        return results,results_excel
             
     except Exception as e:
         print("csv2textにてerror発生")

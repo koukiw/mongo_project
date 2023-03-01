@@ -30,3 +30,29 @@ localhost:8081
 ```
 にアクセス。
 mongo_express上でdemo_db内にデータが格納されていることが確認できればOK
+または、
+
+```python
+docker-compose exec mongo bin/bash
+```
+でmongoコンテナに入って
+```python
+mongosh -u root -p password
+```
+でmongodbへ接続
+```python
+use demo_db
+db.demo_collection.find()
+```
+上記でもdemo_db内にデータが格納されていることが確認できればOK
+
+# DB内検索方法
+pdfのファイルを探したいとき
+```python
+db.demo_collection.find({file_format:"pdf"}).sort()
+```
+ファイル内のテキストで検索したいとき   
+（例）テキスト内に「りんご」が含まれているものの検索
+```python
+db.demo_collection.find({text:{$regex:"りんご"}},{title:1,file_format:1,text:1})
+```
