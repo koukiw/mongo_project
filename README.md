@@ -49,7 +49,7 @@ db.demo_collection.find()
 # DB内検索方法
 ## mongo express上での操作方法
 データ保存先のdemo_dbを選択。
-![picture 1](../images/93179e6594997d30bd4bfa62feabe1686df2b46564846c72b83e4173cf665985.png)  
+![picture 1](./images/93179e6594997d30bd4bfa62feabe1686df2b46564846c72b83e4173cf665985.png)  
 検索窓にて、key（クエリ検索するカラム）を選択。   
 Stringで単語検索、Regexだと正規表現でValueに入力した値を検索できる。
 excelやcsvファイルはcolumnsのkeyを持たせているので、ファイル内のcolumnsで情報を引っ張ることができます。  
