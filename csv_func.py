@@ -38,12 +38,14 @@ def csv2text():
             for index, dic in pd_dic.to_dict(orient="index").items():
                 data["{}".format(index)] = dic 
             filename  = os.path.basename(file)
+            columns = pd_dic.columns.tolist()
             # result = {"title":filename,"text": text,"file_format":"pdf"}
-            result = {"title":filename,"text": data,"file_format":"csv"}
+            result = {"title":filename,"text": data,"columns":columns,"file_format":"csv"}
             results.append(result)
             filename_excel = filename[:-3] + "xlsx"
-            result_excel = {"title":filename_excel,"text": data,"file_format":"excel"}
+            result_excel = {"title":filename_excel,"text": data,"columns":columns,"file_format":"excel"}
             results_excel.append(result_excel)
+            print(results)
             
 
 

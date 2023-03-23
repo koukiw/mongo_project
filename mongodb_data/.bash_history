@@ -68,3 +68,7 @@ pwd
 ls
 mongosh
 mongosh -u root -p
+pwd
+ls
+pwd
+ls
