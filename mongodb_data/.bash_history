@@ -72,3 +72,46 @@ pwd
 ls
 pwd
 ls
+mongosh -u kouki_waka -p password
+mongosh -u root -p
+mongosh -u root -p password
+mongosh 
+mongosh -u admin -p password
+mongosh -u admin -p passwoa
+show dbs;
+mongosh
+mongosh -u root -p password
+mongosh -u root -p hoge
+mongosh
+mongosh -u root -p password
+mongosh -u root
+mongo
+mongosh
+mongosh -u root -p password
+mongosh
+mongosh -u mongo -p password
+show dbs;
+mongosh -u mongo -p password
+mongosh -u root -p password
+mongosh -u root -p
+mongosh -u root -p
+uit
+quit
+quit)(
+quit()
+quti();
+exit
+mongod
+mongod
+mongosh
+show dbs;
+mongosh
+mongosh -u root -p
+mongosh
+mongosh
+mongosh -u rooot -p passwrod
+mongosh -u rooot -p password
+show dbs;
+mongosh -u root -p password
+quit
+quit() quit

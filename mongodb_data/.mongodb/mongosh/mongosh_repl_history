@@ -1,3 +1,112 @@
+show collections
+use admin
+db.creteUser({user:"root",pwd:"password",roles:[{role:readWrite,db:"demo_db"}]})
+db.creteUser({user:"root",pwd:"password",roles:[{role:readWrite,db:"admin"}]})
+db.system.users.find()
+use admin
+show dbs;
+show collections
+db.createUser({ user: "honyarara", pwd: "password", roles: [{ role: " dbAdmin", db: "demo_db" }], roles: [{ role: " readWrite", db: "demo_db"}]})
+use demo_db
+show dbs;
+db.createUser({ user: "ユーザー名", pwd: "パスワード", roles: [{ role: " dbAdmin", db: " データベースの名前" }], roles: [{ role: " readWrite", db: " データベースの名前" }] })
+use demo_db
+show dbs
+use add
+show dbs;
+db.delete_me.find()
+show collections
+use aa
+show dbs;
+use admin
+show dbs;
+mongod
+mongo
+mongosh
+show dbs;
+mongodb
+mongosh
+show collections;
+use admin
+show dbs;
+db.system.users.find()
+use admin
+db.system.users.find()
+use admin
+db.auth("mongo","password")
+db.system.users.find()
+show collections
+db.system.users.find()
+db.system.users.find8)
+show collections
+use admin
+show admin
+show admoin
+show dbs;
+db.system.users.find()
+use admin
+show dbs;
+db.auth("mongo","password")
+db.system.users.find()
+use admin
+show admin
+db.createUser({user:"mongo", pwd:"password", roles:["root"]})
+show dbs
+show dbs;
+db.system.users.find()
+show collections;
+use admin
+show admin
+show dbs;
+db.system.users.find()
+show collections;
+show dbs;
+use admin
+show dbs
+show dbs;
+db.auth("admin", "password")
+show dbs;
+show users
+mongod --auth
+show users;
+use admin
+show users
+db.getUsers()
+show dbs;
+use demo_db
+db.getUsers()
+show dbs;
+db.getUsers()
+db.system.users.find()
+use admin
+show admin
+db.system.users.find()
+use demo_db
+db.system.users.find()
+db.system.user.find()
+db.system.find()
+showPrivileges
+db.system.users.find()
+show collections
+use admin
+show dbs;
+db.system.users.find()
+system.users.find()
+show collections
+db.creteUser({user:"kouki_waka",pwd:"password",roles:[{role:"readWrite",db:"demo_db"}]})
+use admin
+show admin
+show collections;
+show dbs;
+use test
+show dbs;
+db.system.users.find()
+show collections;
+use admin
+show dbs;
+show admin
+db.creteUser({user:"kouki",pwd:"password",roles:[{role:"readWrite",db:"demo_db"}]})
+show dbs;
 quit
 qit
 db.demo_collection.find({text:{$regex:"りんご"}},{title:1,file_format:1,text:1})
@@ -100,4 +209,5 @@ db.system.users.find()
 show collections
 use admin
 db.system.users.find()
-show dbs;dbs;ow dbs;dbs;dbs;ow dbs;dbs;
+show dbs;dbs;ow dbs;dbs;dbs;ow dbs;dbs;dbs;ow dbs;dbs;dbs;ow dbs;dbs;;rs.find()
+show dbs;dbs;ow dbs;dbs;dbs;ow dbs;dbs;dbs;ow dbs;dbs;dbs;ow dbs;dbs;;dbs;dbs;dbs;ow dbs;dbs;dbs;ow dbs;dbs;;s;dbs;ow dbs;dbs;;bs;;;s;dbs;ow dbs;dbs;dbs;ow dbs;dbs;;s;dbs;ow dbs;dbs;;bs;;;s;dbs;ow dbs;dbs;;dbs;dbs;dbs;ow dbs;dbs;dbs;ow dbs;dbs;;s;dbs;ow dbs;dbs;;bs;;;s;dbs;ow dbs;dbs;dbs;ow dbs;dbs;;s;dbs;ow dbs;dbs;;bs;;;ow dbs;dbs;;bs;;;

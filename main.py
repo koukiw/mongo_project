@@ -8,12 +8,15 @@ HOST = 'localhost'
 PORT = 27017
 USERNAME = 'root'
 PASSWORD = 'password'
-
+MONGODB_URL= "mongodb://127.0.0.1:27017"
 DB_NAME = 'demo_db'
 COLLECTION_NAME = 'demo_collection'
 
 if __name__ == '__main__':
     client = MongoClient(host=HOST, port=PORT, username=USERNAME, password=PASSWORD)
+    # client = MongoClient(host="mongo_db",port=PORT, username=USERNAME, password=PASSWORD)
+    # client = MongoClient(MONGODB_URL)
+    # client = MongoClient()
     db = client[DB_NAME]
     collection = db[COLLECTION_NAME]
 
@@ -25,4 +28,4 @@ if __name__ == '__main__':
     # print(results)
 
     collection.insert_many(results)
-    print("完了")
+    print("完了") 
