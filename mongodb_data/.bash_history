@@ -115,3 +115,10 @@ show dbs;
 mongosh -u root -p password
 quit
 quit() quit
+pwd
+ls
+quit
+quit
+ls
+hostname -i
+cat /etc/hosts
