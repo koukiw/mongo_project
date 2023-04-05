@@ -35,5 +35,3 @@ services:
     tty: true
     volumes:
       - ./opt:/root/opt
-    extra_hosts:                  # 追加
-      - localhost:172.27.0.1  # 追加

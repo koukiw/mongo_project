@@ -11,10 +11,11 @@ PASSWORD = 'password'
 MONGODB_URL= "mongodb://127.0.0.1:27017"
 DB_NAME = 'demo_db'
 COLLECTION_NAME = 'demo_collection'
-# 172.27.0.1
+
 
 if __name__ == '__main__':
-    client = MongoClient(host=HOST, port=PORT, username=USERNAME, password=PASSWORD)
+    # client = MongoClient(host=HOST, port=PORT, username=USERNAME, password=PASSWORD)
+    client = MongoClient('mongodb://root:password@host.docker.internal:27017/')
     db = client[DB_NAME]
     collection = db[COLLECTION_NAME]
 
@@ -23,7 +24,7 @@ if __name__ == '__main__':
     csv,excel = csv2text()
     results.extend(csv)
     results.extend(excel)
-    # print(results)
+    print(results)
 
     collection.insert_many(results)
     print("完了") 

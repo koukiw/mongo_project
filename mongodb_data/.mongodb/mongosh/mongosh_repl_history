@@ -1,3 +1,11 @@
+use admin
+show dbs;
+show collections;
+use local
+show collections;
+show dbs;
+use admin
+show dbs;
 show collections
 use admin
 db.creteUser({user:"root",pwd:"password",roles:[{role:readWrite,db:"demo_db"}]})

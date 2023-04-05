@@ -122,3 +122,21 @@ quit
 ls
 hostname -i
 cat /etc/hosts
+ls
+cd data
+ls
+cd configdb
+ls
+cd ../
+cd db
+ls
+cd ../
+cd ../
+cat etc/hosts
+mongosh -u root - p password
+show dbs;
+show collections;
+show dbs;
+show dbs
+mongosh
+mongosh -u root -p
