@@ -10,19 +10,28 @@ RDBMSと呼ばれる従来のテーブルとレコードを使ったDBとは異�
 
 ローカルのpython上からpymongoを使ってdocker上のmongoDBに接続.  
 
-リポジトリをクローンしたのち、./mongo_project配下にて
+リポジトリをクローンして、   
+/opt配下にある
+/pdf
+/csv
+/wordにそれぞれ保存したいファイルを格納したのち   
+./mongo_project配下にて
 ```python
-pip install -r requirements.txt
+docker-compose build --no-cache
 ```
-にて環境を構築してください。それができたら、
+にてコンテナ作成。それができたら、
 ```python
 docker-compose up -d
 ```
-コンテナが起動している状態で　   
+でコンテナ起動。　　　
+
 .pdf/
 .csv/
-.word/配下にそれぞれ保存したいファイルを格納して以下コマンド
+.word/配下にそれぞれ保存したいファイルを格納したのち   
+
 ```python
+docker-compose exec python3 bash
+cd opt
 python main.py
 ```
 ```python
