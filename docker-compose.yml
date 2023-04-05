@@ -35,3 +35,6 @@ services:
     tty: true
     volumes:
       - ./opt:/root/opt
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
