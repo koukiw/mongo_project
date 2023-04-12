@@ -11,10 +11,7 @@ RDBMSと呼ばれる従来のテーブルとレコードを使ったDBとは異�
 ローカルのpython上からpymongoを使ってdocker上のmongoDBに接続.  
 
 リポジトリをクローンして、   
-/opt配下にある
-/pdf
-/csv
-/wordにそれぞれ保存したいファイルを格納したのち   
+/opt/file_dirに保存したいファイル・ディレクトリをアップロードしたのち   
 ./mongo_project配下にて
 ```python
 docker-compose build --no-cache
@@ -38,7 +35,7 @@ python main.py
 localhost:8081
 ```
 にアクセス。
-mongo_express上でdemo_db内にデータが格納されていることが確認できればOK
+mongo_express上でdemo_db内にディレクトリ名のテーブルにデータが格納されていることが確認できればOK
 または、
 
 ```python
