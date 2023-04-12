@@ -21,6 +21,7 @@ def word2text():
         #
         process_name = "wordからのテキスト情報抽出"
         files = glob.glob(os.path.join("./word", "*.docx"))
+        files = glob.glob(os.path.join("./file_dir/**", "*.docx"),recursive=True)
         cnt = 0
         Input_path = "./word"
         print(files)
@@ -28,7 +29,7 @@ def word2text():
         for file in files:
             cnt += 1
             print("テキスト抽出処理中…（{}/{}）".format(cnt, len(files)))
-            print(file)
+            # print(file)
 
             # テキストの抜き出し
             # 本文中のテキスト抽出
@@ -47,8 +48,7 @@ def word2text():
 
             filename  = os.path.basename(file)
 
-            result = {"title":filename,"text": text,"file_format":"word"}
-            # result = {"title":filename,"text": "test","file_format":"word"}
+            result = {"title":filename,"text": text,"file_format":"word","file_path":file[11:]}
             results.append(result)
 
         return results

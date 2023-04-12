@@ -10,7 +10,8 @@ Sheet_Num = 0
 #テキスト情報抽出処理
 #
 process_name = "excelからのテキスト情報抽出"
-files = glob.glob(os.path.join("./excel", "*.xlsx"))
+# files = glob.glob(os.path.join("./excel", "*.xlsx"))
+files = glob.glob(os.path.join('./file_dir/**', "*.xlsx"),recursive=True)
 cnt = 0
 Input_path = "./excel"
 print(files[0])

@@ -21,7 +21,8 @@ def func_pdf2text():
         # PDF→テキスト情報抽出処理
         #
         process_name = "PDFからのテキスト情報抽出"
-        files = glob.glob(os.path.join("./pdf", "*.pdf"))
+        # files = glob.glob(os.path.join("./pdf", "*.pdf"))
+        files = glob.glob(os.path.join("./file_dir/**", "*.pdf"),recursive=True)
         cnt = 0
         Input_path = "./pdf"
         print(files)
@@ -30,7 +31,7 @@ def func_pdf2text():
             cnt += 1
             print("テキスト抽出処理中…（{}/{}）".format(cnt, len(files)))
             # PDFのテキスト取り出し
-            print(file)
+            # print(file)
 
             # テキストの抜き出し
             text = extract_text(file)
@@ -39,13 +40,11 @@ def func_pdf2text():
 
             filename  = os.path.basename(file)
 
-            result = {"title":filename,"text": text,"file_format":"pdf"}
-            # result = {"title":filename,"text": "test","file_format":"pdf"}
+            # result = {"title":filename,"text": text,"file_format":"pdf","file_path":file[11:]}
+            result = {"title":filename,"text": "test","file_format":"pdf","file_path":file[11:]}
             results.append(result)
 
-        # result_json = json.dumps(result, indent=2, ensure_ascii=False)
-        # print("result_json",result_json)
-        # print(type(result_json))
+        print(results)    
         return results
             
     except Exception as e:
