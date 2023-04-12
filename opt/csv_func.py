@@ -14,7 +14,7 @@ import pandas as pd
 
 
 # CSVからテキストを抜き出してjson形式で情報を整理（keyはtitle、text,file_format）
-def csv2text():
+def csv2text(collection_name):
     process_name = ""
     try:
         #
@@ -22,14 +22,18 @@ def csv2text():
         #
         process_name = "CSVからのテキスト情報抽出"
         # files = glob.glob(os.path.join("./csv", "*.csv"))
-        files = glob.glob(os.path.join('./file_dir/**', "*.csv"),recursive=True)
+        # files = glob.glob(os.path.join('./file_dir/**', "*.csv"),recursive=True)
+        if collection_name =="":
+            files = glob.glob(os.path.join("./file_dir","*.csv"),recursive=True)
+        else:
+            files = glob.glob(os.path.join("./file_dir", collection_name,"**","*.csv"),recursive=True)
         cnt = 0
         print(files)
         results = []
         results_excel = []
         for file in files:
             cnt += 1
-            print("テキスト抽出処理中…（{}/{}）".format(cnt, len(files)))
+            print("csvテキスト抽出処理中…（{}/{}）".format(cnt, len(files)))
 
             pd_dic = pd.read_csv(file, sep=",")
 

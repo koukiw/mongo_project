@@ -14,22 +14,24 @@ CONFIG_KEY_PDF_FOLDER = "../pdf"
 
 
 # PDFからテキストを抜き出してjson形式で情報を整理（keyはtitle、text,file_format）
-def func_pdf2text():
+def func_pdf2text(collection_name):
     process_name = ""
     try:
         #
         # PDF→テキスト情報抽出処理
         #
         process_name = "PDFからのテキスト情報抽出"
-        # files = glob.glob(os.path.join("./pdf", "*.pdf"))
-        files = glob.glob(os.path.join("./file_dir/**", "*.pdf"),recursive=True)
+        if collection_name =="":
+            files = glob.glob(os.path.join("./file_dir","*.pdf"),recursive=True)
+        else:
+            files = glob.glob(os.path.join("./file_dir", collection_name,"**","*.pdf"),recursive=True)
         cnt = 0
         Input_path = "./pdf"
-        print(files)
+        print("pdffiles",files)
         results = []
         for file in files:
             cnt += 1
-            print("テキスト抽出処理中…（{}/{}）".format(cnt, len(files)))
+            print("pdfテキスト抽出処理中…（{}/{}）".format(cnt, len(files)))
             # PDFのテキスト取り出し
             # print(file)
 
@@ -44,7 +46,6 @@ def func_pdf2text():
             result = {"title":filename,"text": "test","file_format":"pdf","file_path":file[11:]}
             results.append(result)
 
-        print(results)    
         return results
             
     except Exception as e:

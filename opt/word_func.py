@@ -13,22 +13,26 @@ import warnings
 # 添付画像がある場合はそれも格納、ある場合のみjsonのkeyを増やす
 
 # wordからテキストを抜き出す
-def word2text():
+def word2text(collection_name):
     process_name = ""
     try:
         #
         # PDF→テキスト情報抽出処理
         #
         process_name = "wordからのテキスト情報抽出"
-        files = glob.glob(os.path.join("./word", "*.docx"))
-        files = glob.glob(os.path.join("./file_dir/**", "*.docx"),recursive=True)
+        # files = glob.glob(os.path.join("./word", "*.docx"))
+        # files = glob.glob(os.path.join("./file_dir/**", "*.docx"),recursive=True)
+        if collection_name =="":
+            files = glob.glob(os.path.join("./file_dir","*.docx"),recursive=True)
+        else:
+            files = glob.glob(os.path.join("./file_dir", collection_name,"**","*.docx"),recursive=True)
+        print("wordfiles",files)
         cnt = 0
         Input_path = "./word"
-        print(files)
         results = []
         for file in files:
             cnt += 1
-            print("テキスト抽出処理中…（{}/{}）".format(cnt, len(files)))
+            print("wordテキスト抽出処理中…（{}/{}）".format(cnt, len(files)))
             # print(file)
 
             # テキストの抜き出し

@@ -3,6 +3,7 @@ from pdf_func import func_pdf2text
 from word_func import word2text
 from csv_func import csv2text
 import pdfminer
+import glob
 
 HOST = 'localhost'
 PORT = 27017
@@ -21,17 +22,33 @@ if __name__ == '__main__':
 
     # dockerコンテナ用リンク
     client = MongoClient('mongodb://root:password@host.docker.internal:27017/')
+    dir_list = glob.glob('./file_dir/**/')
+    db = client[DB_NAME]
+    for dir in dir_list:
+        collection_name = dir[11:-1]
+        print(collection_name)
+        collection = db[collection_name]
+        results = func_pdf2text(collection_name)
+        results.extend(word2text(collection_name))
+        csv,excel = csv2text(collection_name)
+        results.extend(csv)
+        results.extend(excel)
+        collection.insert_many(results)
+        print(collection_name[11:-1] + "完了")
     
-    db = client[DB_NAME]
-    db = client[DB_NAME]
-    collection = db[COLLECTION_NAME]
+    single_file_list = glob.glob('./file_dir/*.*')
+    if len(single_file_list)!=0:
+        collection = db["single_file"]
+        for single_file in single_file_list:
+            idx = single_file.rfind(".")
+            file_format = single_file[idx+1:]
+            if file_format =="pdf":
+                results = func_pdf2text("")
+                collection.insert_many(results)
+            elif file_format =="docx":
+                results = word2text("")
+                collection.insert_one(results)
+            elif file_format =="csv":
+                results = csv2text("")
+                collection.insert_one(results)
 
-    results = func_pdf2text()
-    results.extend(word2text())
-    csv,excel = csv2text()
-    results.extend(csv)
-    results.extend(excel)
-    # print(results)
-
-    collection.insert_many(results)
-    print("完了") 
