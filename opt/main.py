@@ -17,10 +17,10 @@ if __name__ == '__main__':
     # ローカルのmongodb用リンク
     # client = MongoClient(host=HOST, port=PORT, username=USERNAME, password=PASSWORD)
     #　ローカルの場合は以下で接続できる
-    client = MongoClient(username=USERNAME, password=PASSWORD)
+    # client = MongoClient(username=USERNAME, password=PASSWORD)
 
     # dockerコンテナ用リンク
-    # client = MongoClient('mongodb://root:password@host.docker.internal:27017/')
+    client = MongoClient('mongodb://root:password@host.docker.internal:27017/')
     
     db = client[DB_NAME]
     db = client[DB_NAME]
