@@ -1,4 +1,4 @@
 .ipynb_checkpoints
 .DS_Store
-local_test.ipynb
+./opt/local_test.ipynb
 test.py
