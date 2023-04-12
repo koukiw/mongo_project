@@ -21,11 +21,6 @@ docker-compose build --no-cache
 docker-compose up -d
 ```
 でコンテナ起動。　　　
-
-.pdf/
-.csv/
-.word/配下にそれぞれ保存したいファイルを格納したのち   
-
 ```python
 docker-compose exec python3 bash
 cd opt
