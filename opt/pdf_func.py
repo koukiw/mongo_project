@@ -14,7 +14,7 @@ CONFIG_KEY_PDF_FOLDER = "../pdf"
 
 
 # PDFからテキストを抜き出してjson形式で情報を整理（keyはtitle、text,file_format）
-def func_pdf2text(collection_name):
+def func_pdf2text(collection_name,dt_now):
     process_name = ""
     try:
         #
@@ -42,8 +42,8 @@ def func_pdf2text(collection_name):
 
             filename  = os.path.basename(file)
 
-            # result = {"title":filename,"text": text,"file_format":"pdf","file_path":file[11:]}
-            result = {"title":filename,"text": "test","file_format":"pdf","file_path":file[11:]}
+            # result = {"ファイル名":filename,"text": text,"ファイル拡張子":"pdf","パス":file[11:]}
+            result = {"プロジェクト名":collection_name,"パス":file[11:],"ファイル名":filename,"text": text,"ファイル拡張子":"pdf","upload_data":dt_now}
             results.append(result)
 
         return results

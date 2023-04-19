@@ -4,6 +4,11 @@ from word_func import word2text
 from csv_func import csv2text
 import pdfminer
 import glob
+import datetime
+import pytz
+
+#upload_dataは実行時の日時
+dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo')).strftime('%Y%m%d%H%M%S')
 
 HOST = 'localhost'
 PORT = 27017
@@ -26,11 +31,12 @@ if __name__ == '__main__':
     db = client[DB_NAME]
     for dir in dir_list:
         collection_name = dir[11:-1]
+        print("ディレクトリ選択")
         print(collection_name)
-        collection = db[collection_name]
-        results = func_pdf2text(collection_name)
-        results.extend(word2text(collection_name))
-        csv,excel = csv2text(collection_name)
+        collection = db[COLLECTION_NAME]
+        results = func_pdf2text(collection_name,dt_now)
+        results.extend(word2text(collection_name,dt_now))
+        csv,excel = csv2text(collection_name,dt_now)
         results.extend(csv)
         results.extend(excel)
         collection.insert_many(results)
@@ -38,17 +44,17 @@ if __name__ == '__main__':
     
     single_file_list = glob.glob('./file_dir/*.*')
     if len(single_file_list)!=0:
-        collection = db["single_file"]
+        collection = db[COLLECTION_NAME]
         for single_file in single_file_list:
             idx = single_file.rfind(".")
             file_format = single_file[idx+1:]
             if file_format =="pdf":
-                results = func_pdf2text("")
+                results = func_pdf2text("",dt_now)
                 collection.insert_many(results)
             elif file_format =="docx":
-                results = word2text("")
+                results = word2text("",dt_now)
                 collection.insert_one(results)
             elif file_format =="csv":
-                results = csv2text("")
+                results = csv2text("",dt_now)
                 collection.insert_one(results)
 

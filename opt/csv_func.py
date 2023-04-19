@@ -14,7 +14,7 @@ import pandas as pd
 
 
 # CSVからテキストを抜き出してjson形式で情報を整理（keyはtitle、text,file_format）
-def csv2text(collection_name):
+def csv2text(collection_name,dt_now):
     process_name = ""
     try:
         #
@@ -39,14 +39,18 @@ def csv2text(collection_name):
 
             data = {}
             for index, dic in pd_dic.to_dict(orient="index").items():
-                data["{}".format(index)] = dic 
+                data["{}".format(index)] = dic
+            # テキストの加工
+            data = str(data)
+            data = data.replace("\n","").replace("\r","").replace("\t","").strip()
+
             filename  = os.path.basename(file)
             columns = pd_dic.columns.tolist()
             # result = {"title":filename,"text": text,"file_format":"pdf"}
-            result = {"title":filename,"text": data,"columns":columns,"file_format":"csv","file_path":file[11:]}
+            result = {"プロジェクト名":collection_name,"パス":file[11:],"ファイル名":filename,"text": data,"ファイル拡張子":"csv","upload_data":"2022/4/19"}
             results.append(result)
             filename_excel = filename[:-3] + "xlsx"
-            result_excel = {"title":filename_excel,"text": data,"columns":columns,"file_format":"excel","file_path":file[11:]}
+            result_excel = {"プロジェクト名":collection_name,"パス":file[11:],"ファイル名":filename,"text": data,"ファイル拡張子":"excel","upload_data":dt_now}
             results_excel.append(result_excel)
 
             

@@ -13,7 +13,7 @@ import warnings
 # 添付画像がある場合はそれも格納、ある場合のみjsonのkeyを増やす
 
 # wordからテキストを抜き出す
-def word2text(collection_name):
+def word2text(collection_name,dt_now):
     process_name = ""
     try:
         #
@@ -52,7 +52,7 @@ def word2text(collection_name):
 
             filename  = os.path.basename(file)
 
-            result = {"title":filename,"text": text,"file_format":"word","file_path":file[11:]}
+            result = {"プロジェクト名":collection_name,"パス":file[11:],"ファイル名":filename,"text": text,"ファイル拡張子":"word","upload_data":dt_now}
             results.append(result)
 
         return results
